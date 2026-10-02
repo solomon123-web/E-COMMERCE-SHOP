@@ -208,12 +208,100 @@
       "role": "customer",
       "createdAt": "2026-10-01T16:54:21.132Z",
       "updatedAt": "2026-10-01T16:54:21.132Z"
+    },
+    {
+      "id": "admin-1",
+      "name": "Lumora Admin",
+      "email": "admin@lumora.com",
+      "passwordHash": "$2b$10$FHfHA/DJgRT0wxW4caneS.n.pyqbwlyz.8e5axRm/WR7pR/vcEDYe",
+      "role": "admin",
+      "phone": "555010101",
+      "createdAt": "2026-10-02T23:03:04.926Z",
+      "updatedAt": "2026-10-02T23:03:04.926Z"
+    },
+    {
+      "id": "user-1790982185217",
+      "name": "Jane Doe",
+      "email": "jane@example.com",
+      "passwordHash": "$2b$10$r8ON/9yZB38DQWZQpNUI5ucioUtnu8rshWDiQhPxbAf9KWsNJYH6y",
+      "role": "customer",
+      "createdAt": "2026-10-02T23:03:05.217Z",
+      "updatedAt": "2026-10-02T23:03:05.217Z"
+    },
+    {
+      "id": "admin-1",
+      "name": "Lumora Admin",
+      "email": "admin@lumora.com",
+      "passwordHash": "$2b$10$rx2zu8cFsRn9W4n6lJQD2u6dCqsoWD2bxXZtZj1p.Cnh96gNczLu.",
+      "role": "admin",
+      "phone": "555010101",
+      "createdAt": "2026-10-02T23:12:18.845Z",
+      "updatedAt": "2026-10-02T23:12:18.845Z"
+    },
+    {
+      "id": "user-1790982739099",
+      "name": "Jane Doe",
+      "email": "jane.1790982738876.161026fc90a86@example.com",
+      "passwordHash": "$2b$10$D3piSSko2teSWzIe1W02AuXwgJ519ymRXIAy312pv.ymVqSbD2.1e",
+      "role": "customer",
+      "createdAt": "2026-10-02T23:12:19.099Z",
+      "updatedAt": "2026-10-02T23:12:19.099Z"
+    },
+    {
+      "id": "user-1790982739319",
+      "name": "Jane Doe",
+      "email": "jane.1790982739106.c62e3665e8def@example.com",
+      "passwordHash": "$2b$10$h4fVTIqqftWOK.3W..9A3efLqopsRXAgOCFaUizKdacnq8Vmps5cu",
+      "role": "customer",
+      "createdAt": "2026-10-02T23:12:19.319Z",
+      "updatedAt": "2026-10-02T23:12:19.319Z"
+    },
+    {
+      "id": "admin-1",
+      "name": "Lumora Admin",
+      "email": "admin@lumora.com",
+      "passwordHash": "$2b$10$8bO..xxZ96Ezf80uRH6hA.IhAMoR0kmvu2fyTlNRYZG/GHyVWkOHa",
+      "role": "admin",
+      "phone": "555010101",
+      "createdAt": "2026-10-02T23:13:06.703Z",
+      "updatedAt": "2026-10-02T23:13:06.703Z"
+    },
+    {
+      "id": "admin-1",
+      "name": "Lumora Admin",
+      "email": "admin@lumora.com",
+      "passwordHash": "$2b$10$0DckebooOLv18vdyIDrw1..XzePjsF.t3Hr8J2o0ygtwzxVHFuSI.",
+      "role": "admin",
+      "phone": "555010101",
+      "createdAt": "2026-10-02T23:20:42.635Z",
+      "updatedAt": "2026-10-02T23:20:42.635Z"
     }
   ],
   "carts": {
     "user-1790858671009": [],
     "user-1790866601444": [],
-    "user-1790873661132": []
+    "user-1790873661132": [],
+    "user-1790982185217": [],
+    "guest": [
+      {
+        "id": "cart-1790982185528",
+        "productId": 1,
+        "quantity": 2,
+        "createdAt": "2026-10-02T23:03:05.528Z",
+        "updatedAt": "2026-10-02T23:03:05.528Z"
+      }
+    ],
+    "user-1790982739099": [],
+    "user-1790982739319": [],
+    "guest-1790982739613-9a12d3fe8bb29": [
+      {
+        "id": "cart-1790982739613",
+        "productId": 1,
+        "quantity": 2,
+        "createdAt": "2026-10-02T23:12:19.613Z",
+        "updatedAt": "2026-10-02T23:12:19.613Z"
+      }
+    ]
   },
   "orders": [
     {
@@ -248,7 +336,117 @@
       "orderStatus": "pending",
       "createdAt": "2026-10-01T12:49:06.302Z",
       "updatedAt": "2026-10-01T12:49:06.302Z"
+    },
+    {
+      "id": "order-1790982185726",
+      "orderNumber": "LUM-156657",
+      "userId": "user-1790982185217",
+      "email": "jane@example.com",
+      "phone": "1234567890",
+      "shippingAddress": {
+        "fullName": "Jane Doe",
+        "phone": "1234567890",
+        "address": "5 Market Street",
+        "city": "Austin",
+        "state": "Texas",
+        "country": "USA",
+        "postalCode": "73301"
+      },
+      "items": [
+        {
+          "productId": 1,
+          "productName": "Aurora Headphones",
+          "quantity": 1,
+          "unitPrice": 199.99,
+          "totalPrice": 199.99
+        }
+      ],
+      "subtotal": 199.99,
+      "shippingCost": 0,
+      "discount": 0,
+      "total": 199.99,
+      "paymentStatus": "pending",
+      "orderStatus": "pending",
+      "createdAt": "2026-10-02T23:03:05.726Z",
+      "updatedAt": "2026-10-02T23:03:05.726Z"
+    },
+    {
+      "id": "order-1790982739616",
+      "orderNumber": "LUM-356903",
+      "userId": null,
+      "email": "jane.1790982739615.c522ff38a07c6@example.com",
+      "phone": "1234567890",
+      "shippingAddress": {
+        "fullName": "Jane Doe",
+        "phone": "1234567890",
+        "address": "5 Market Street",
+        "city": "Austin",
+        "state": "Texas",
+        "country": "USA",
+        "postalCode": "73301"
+      },
+      "items": [
+        {
+          "productId": 1,
+          "productName": "Aurora Headphones",
+          "quantity": 1,
+          "unitPrice": 199.99,
+          "totalPrice": 199.99
+        }
+      ],
+      "subtotal": 199.99,
+      "shippingCost": 0,
+      "discount": 0,
+      "total": 199.99,
+      "paymentStatus": "pending",
+      "orderStatus": "pending",
+      "createdAt": "2026-10-02T23:12:19.616Z",
+      "updatedAt": "2026-10-02T23:12:19.616Z"
+    },
+    {
+      "id": "order-1790982829391",
+      "orderNumber": "LUM-107114",
+      "userId": "admin-1",
+      "email": "admin@lumora.com",
+      "phone": "08000000000",
+      "shippingAddress": {
+        "fullName": "Test User",
+        "phone": "08000000000",
+        "address": "123 Main Street",
+        "city": "Lagos",
+        "state": "Lagos",
+        "country": "Nigeria",
+        "postalCode": "100001"
+      },
+      "items": [
+        {
+          "productId": 1,
+          "productName": "Aurora Headphones",
+          "quantity": 1,
+          "unitPrice": 199.99,
+          "totalPrice": 199.99
+        }
+      ],
+      "subtotal": 199.99,
+      "shippingCost": 0,
+      "discount": 0,
+      "total": 199.99,
+      "paymentStatus": "pending",
+      "orderStatus": "pending",
+      "createdAt": "2026-10-02T23:13:49.391Z",
+      "updatedAt": "2026-10-02T23:13:49.391Z"
     }
   ],
-  "payments": []
+  "payments": [
+    {
+      "id": "payment-1790983291067",
+      "orderId": "order-1790982829391",
+      "paystackReference": "T615162407353723",
+      "amount": 19999,
+      "currency": "NGN",
+      "status": "pending",
+      "createdAt": "2026-10-02T23:21:31.067Z",
+      "updatedAt": "2026-10-02T23:21:31.067Z"
+    }
+  ]
 }

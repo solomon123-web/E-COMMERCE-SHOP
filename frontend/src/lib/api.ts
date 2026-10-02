@@ -4,12 +4,15 @@ const API_BASE = import.meta.env.VITE_API_URL ?? '/api';
 
 export async function apiFetch<T>(path: string, options: RequestInit = {}): Promise<T> {
   try {
+    const headers = new Headers(options.headers ?? {});
+
+    if (options.body !== undefined && !(options.body instanceof FormData)) {
+      headers.set('Content-Type', 'application/json');
+    }
+
     const response = await fetch(`${API_BASE}${path}`, {
-      headers: {
-        'Content-Type': 'application/json',
-        ...(options.headers ?? {}),
-      },
       ...options,
+      headers,
     });
 
     const body = await response.text();

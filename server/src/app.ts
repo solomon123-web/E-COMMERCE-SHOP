@@ -286,6 +286,9 @@ app.post('/api/orders', authMiddleware, async (req, res) => {
     return res.status(401).json({ message: 'Authentication required.' });
   }
 
+  console.log('[Order Creation] Content-Type:', req.headers['content-type']);
+  console.log('[Order Creation] Body exists:', req.body !== undefined);
+  console.log('[Order Creation] Body:', req.body);
   console.log('[Order Creation] Received request body:', JSON.stringify(req.body, null, 2));
   console.log('[Order Creation] User:', user.id, user.email);
 

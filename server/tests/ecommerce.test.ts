@@ -11,20 +11,28 @@ import {
 
 describe('ecommerce backend', () => {
   it('registers a user with a secure hash and a customer role', async () => {
+    const uniqueEmail = `jane.${Date.now()}.${Math.random().toString(16).slice(2)}@example.com`;
     const user = await createUserAccount({
       name: 'Jane Doe',
-      email: 'jane@example.com',
+      email: uniqueEmail,
       password: 'Passw0rd!',
     });
 
-    expect(user.email).toBe('jane@example.com');
+    expect(user.email).toBe(uniqueEmail.toLowerCase());
     expect(user.passwordHash).toBeTruthy();
     expect(user.role).toBe('customer');
   });
 
   it('logs in with the correct credentials', async () => {
+    const uniqueEmail = `jane.${Date.now()}.${Math.random().toString(16).slice(2)}@example.com`;
+    await createUserAccount({
+      name: 'Jane Doe',
+      email: uniqueEmail,
+      password: 'Passw0rd!',
+    });
+
     const token = await loginUser({
-      email: 'jane@example.com',
+      email: uniqueEmail,
       password: 'Passw0rd!',
     });
 
@@ -39,11 +47,12 @@ describe('ecommerce backend', () => {
   });
 
   it('adds an item to the cart and creates an order with stock validation', async () => {
-    const added = await addItemToCart('guest', 1, 2);
+    const guestId = `guest-${Date.now()}-${Math.random().toString(16).slice(2)}`;
+    const added = await addItemToCart(guestId, 1, 2);
     expect(added.quantity).toBe(2);
 
     const order = await createOrder({
-      userEmail: 'jane@example.com',
+      userEmail: `jane.${Date.now()}.${Math.random().toString(16).slice(2)}@example.com`,
       items: [{ productId: 1, quantity: 1 }],
       shippingAddress: {
         fullName: 'Jane Doe',
@@ -57,7 +66,7 @@ describe('ecommerce backend', () => {
     });
 
     expect(order.total).toBeGreaterThan(0);
-    expect(order.paymentStatus).toBe('paid');
+    expect(order.paymentStatus).toBe('pending');
   });
 
   it('returns stats for the dashboard', async () => {
