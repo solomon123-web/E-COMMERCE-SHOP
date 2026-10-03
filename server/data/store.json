@@ -399,6 +399,16 @@
       "phone": "555010101",
       "createdAt": "2026-10-03T19:46:13.829Z",
       "updatedAt": "2026-10-03T19:46:13.829Z"
+    },
+    {
+      "id": "admin-1",
+      "name": "Lumora Admin",
+      "email": "admin@lumora.com",
+      "passwordHash": "$2b$10$lrxNipBID8fsvZF62Izr1OmpttWoeu4bm/mBOaR39tjIsmnJKoyHa",
+      "role": "admin",
+      "phone": "555010101",
+      "createdAt": "2026-10-03T20:02:15.424Z",
+      "updatedAt": "2026-10-03T20:02:15.424Z"
     }
   ],
   "carts": {
@@ -1021,6 +1031,105 @@
       "orderStatus": "pending",
       "createdAt": "2026-10-03T19:58:14.858Z",
       "updatedAt": "2026-10-03T19:58:14.858Z"
+    },
+    {
+      "id": "order-1791061505742",
+      "orderNumber": "LUM-490604",
+      "userId": "user-1790866601444",
+      "email": "solomonchimeremeze22@gmail.com",
+      "phone": "07044950605",
+      "shippingAddress": {
+        "fullName": "Chimeremeze Solomon",
+        "phone": "07044950605",
+        "address": "Block industry, Kurudu, Abuja",
+        "city": "Abuja",
+        "state": "enugu",
+        "country": "Nigeria",
+        "postalCode": "199190"
+      },
+      "items": [
+        {
+          "productId": 1,
+          "productName": "Aurora Headphones",
+          "quantity": 1,
+          "unitPrice": 199.99,
+          "totalPrice": 199.99
+        }
+      ],
+      "subtotal": 199.99,
+      "shippingCost": 0,
+      "discount": 0,
+      "total": 199.99,
+      "paymentStatus": "pending",
+      "orderStatus": "pending",
+      "createdAt": "2026-10-03T21:05:05.829Z",
+      "updatedAt": "2026-10-03T21:05:05.829Z"
+    },
+    {
+      "id": "order-1791061534570",
+      "orderNumber": "LUM-388927",
+      "userId": "user-1790866601444",
+      "email": "solomonchimeremeze22@gmail.com",
+      "phone": "07044950605",
+      "shippingAddress": {
+        "fullName": "Chimeremeze Solomon",
+        "phone": "07044950605",
+        "address": "Block industry, Kurudu, Abuja",
+        "city": "Abuja",
+        "state": "enugu",
+        "country": "Nigeria",
+        "postalCode": "199190"
+      },
+      "items": [
+        {
+          "productId": 1,
+          "productName": "Aurora Headphones",
+          "quantity": 1,
+          "unitPrice": 199.99,
+          "totalPrice": 199.99
+        }
+      ],
+      "subtotal": 199.99,
+      "shippingCost": 0,
+      "discount": 0,
+      "total": 199.99,
+      "paymentStatus": "pending",
+      "orderStatus": "pending",
+      "createdAt": "2026-10-03T21:05:34.592Z",
+      "updatedAt": "2026-10-03T21:05:34.592Z"
+    },
+    {
+      "id": "order-1791061726054",
+      "orderNumber": "LUM-844267",
+      "userId": "user-1790866601444",
+      "email": "solomonchimeremeze22@gmail.com",
+      "phone": "07044950605",
+      "shippingAddress": {
+        "fullName": "Chimeremeze Solomon",
+        "phone": "07044950605",
+        "address": "Block industry, Kurudu, Abuja",
+        "city": "Abuja",
+        "state": "enugu",
+        "country": "Nigeria",
+        "postalCode": "199190"
+      },
+      "items": [
+        {
+          "productId": 3,
+          "productName": "Terra Bottle",
+          "quantity": 1,
+          "unitPrice": 39.99,
+          "totalPrice": 39.99
+        }
+      ],
+      "subtotal": 39.99,
+      "shippingCost": 14.99,
+      "discount": 0,
+      "total": 54.980000000000004,
+      "paymentStatus": "pending",
+      "orderStatus": "pending",
+      "createdAt": "2026-10-03T21:08:46.065Z",
+      "updatedAt": "2026-10-03T21:08:46.065Z"
     }
   ],
   "payments": [
@@ -1043,6 +1152,26 @@
       "status": "pending",
       "createdAt": "2026-10-03T19:51:09.078Z",
       "updatedAt": "2026-10-03T19:51:09.078Z"
+    },
+    {
+      "id": "payment-1791061543598",
+      "orderId": "order-1791061534570",
+      "paystackReference": "T660458152689379",
+      "amount": 19999,
+      "currency": "NGN",
+      "status": "pending",
+      "createdAt": "2026-10-03T21:05:43.598Z",
+      "updatedAt": "2026-10-03T21:05:43.598Z"
+    },
+    {
+      "id": "payment-1791061729887",
+      "orderId": "order-1791061726054",
+      "paystackReference": "T371556968514116",
+      "amount": 5498,
+      "currency": "NGN",
+      "status": "pending",
+      "createdAt": "2026-10-03T21:08:49.914Z",
+      "updatedAt": "2026-10-03T21:08:49.914Z"
     }
   ]
 }

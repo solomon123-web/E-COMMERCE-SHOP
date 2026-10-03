@@ -1,8 +1,7 @@
 import dotenv from 'dotenv';
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
 
-const currentDir = path.dirname(fileURLToPath(import.meta.url));
+const currentDir = __dirname;
 const serverRoot = path.resolve(currentDir, '..', '..');
 const serverEnvPath = path.join(serverRoot, '.env');
 
