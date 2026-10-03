@@ -21,6 +21,24 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const tokenFromQuery = params.get('token');
+    const errorFromQuery = params.get('error');
+
+    if (tokenFromQuery) {
+      setToken(tokenFromQuery);
+      const nextUrl = new URL(window.location.href);
+      nextUrl.searchParams.delete('token');
+      nextUrl.searchParams.delete('error');
+      window.history.replaceState({}, '', `${nextUrl.pathname}${nextUrl.search}`);
+    }
+
+    if (errorFromQuery) {
+      console.error('Google authentication failed:', errorFromQuery);
+    }
+  }, []);
+
+  useEffect(() => {
     const loadSession = async () => {
       if (!token) {
         setIsLoading(false);

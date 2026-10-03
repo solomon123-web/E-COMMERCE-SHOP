@@ -1,3 +1,4 @@
+import crypto from 'node:crypto';
 import cors from 'cors';
 import express, { type NextFunction, type Request, type Response } from 'express';
 import rateLimit from 'express-rate-limit';
@@ -12,6 +13,7 @@ import {
   confirmPayment,
   createOrder,
   createPayment,
+  createGoogleUser,
   createUserAccount,
   getAllUsers,
   getCartByUser,
@@ -41,6 +43,10 @@ import {
 } from './services/paystackService';
 
 const app = express();
+const GOOGLE_AUTH_URL = 'https://accounts.google.com/o/oauth2/v2/auth';
+const GOOGLE_TOKEN_URL = 'https://oauth2.googleapis.com/token';
+const GOOGLE_USERINFO_URL = 'https://openidconnect.googleapis.com/v1/userinfo';
+const googleStateStore = new Map<string, { createdAt: number }>();
 
 app.use(cors({ origin: true, credentials: true }));
 app.use(helmet());
@@ -163,22 +169,118 @@ app.get('/api/auth/me', authMiddleware, (req, res) => {
 });
 
 app.get('/api/auth/google', (_req, res) => {
-  if (!env.googleClientId) {
+  if (!env.googleClientId || !env.googleClientSecret || !env.googleCallbackUrl) {
     return res.status(503).json({
       message: 'Google OAuth is not configured. Set GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET, and GOOGLE_CALLBACK_URL in your environment.',
     });
   }
 
-  return res.json({
-    message: 'Google OAuth is configured for production use.',
-    redirectUrl: `/auth/google?clientId=${env.googleClientId}`,
+  const state = crypto.randomBytes(24).toString('hex');
+  googleStateStore.set(state, { createdAt: Date.now() });
+
+  const params = new URLSearchParams({
+    client_id: env.googleClientId,
+    redirect_uri: env.googleCallbackUrl,
+    response_type: 'code',
+    scope: 'openid email profile',
+    access_type: 'online',
+    prompt: 'select_account',
+    state,
   });
+
+  return res.redirect(`${GOOGLE_AUTH_URL}?${params.toString()}`);
 });
 
-app.get('/api/auth/google/callback', (_req, res) => {
-  return res.json({
-    message: 'Google OAuth callback has been prepared. Configure the real provider credentials to enable sign-in.',
-  });
+app.get('/api/auth/google/callback', async (req, res) => {
+  const { code, state, error, error_description } = req.query;
+  const frontendUrl = new URL(env.appUrl || 'http://localhost:5173');
+
+  if (error) {
+    frontendUrl.searchParams.set('error', typeof error === 'string' ? error : 'google_oauth_error');
+    return res.redirect(frontendUrl.toString());
+  }
+
+  if (!code || typeof code !== 'string') {
+    frontendUrl.searchParams.set('error', 'google_missing_code');
+    return res.redirect(frontendUrl.toString());
+  }
+
+  const stateValue = typeof state === 'string' ? state : '';
+  const hasValidState = !!stateValue && googleStateStore.has(stateValue);
+  if (!hasValidState) {
+    frontendUrl.searchParams.set('error', 'google_invalid_state');
+    return res.redirect(frontendUrl.toString());
+  }
+
+  googleStateStore.delete(stateValue);
+
+  if (!env.googleClientId || !env.googleClientSecret || !env.googleCallbackUrl) {
+    frontendUrl.searchParams.set('error', 'google_not_configured');
+    return res.redirect(frontendUrl.toString());
+  }
+
+  try {
+    const tokenResponse = await fetch(GOOGLE_TOKEN_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: new URLSearchParams({
+        code,
+        client_id: env.googleClientId,
+        client_secret: env.googleClientSecret,
+        redirect_uri: env.googleCallbackUrl,
+        grant_type: 'authorization_code',
+      }).toString(),
+    });
+
+    const tokenData = (await tokenResponse.json()) as {
+      access_token?: string;
+      error?: string;
+      error_description?: string;
+    };
+
+    if (!tokenResponse.ok || !tokenData.access_token) {
+      console.error('[Google OAuth] Token exchange failed', { message: tokenData.error || tokenData.error_description || 'unknown error' });
+      frontendUrl.searchParams.set('error', 'google_token_exchange_failed');
+      return res.redirect(frontendUrl.toString());
+    }
+
+    const userResponse = await fetch(GOOGLE_USERINFO_URL, {
+      headers: {
+        Authorization: `Bearer ${tokenData.access_token}`,
+      },
+    });
+
+    const googleProfile = (await userResponse.json()) as {
+      sub?: string;
+      email?: string;
+      name?: string;
+      picture?: string;
+      email_verified?: boolean;
+    };
+
+    if (!userResponse.ok || !googleProfile.email || googleProfile.email_verified !== true) {
+      console.error('[Google OAuth] User info validation failed', { email: googleProfile.email, email_verified: googleProfile.email_verified });
+      frontendUrl.searchParams.set('error', 'google_email_not_verified');
+      return res.redirect(frontendUrl.toString());
+    }
+
+    const user = await createGoogleUser({
+      name: googleProfile.name || googleProfile.email.split('@')[0],
+      email: googleProfile.email,
+      googleId: googleProfile.sub || googleProfile.email,
+      avatarUrl: googleProfile.picture,
+    });
+
+    const token = signToken(user);
+    frontendUrl.searchParams.set('token', token);
+    return res.redirect(frontendUrl.toString());
+  } catch (error) {
+    console.error('[Google OAuth] Callback failed', error instanceof Error ? error.message : error);
+    frontendUrl.searchParams.set('error', 'google_callback_failed');
+    return res.redirect(frontendUrl.toString());
+  }
 });
 
 app.get('/api/products', (_req, res) => {

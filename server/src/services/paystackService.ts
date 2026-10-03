@@ -53,10 +53,16 @@ export async function initializePaystackTransaction(
   reference: string;
 }> {
   if (!env.paystackSecretKey) {
-    throw new Error('Paystack secret key not configured');
+    throw new Error('PAYSTACK_SECRET_KEY is not configured on the server.');
   }
 
-  // Amount is expected to be in kobo already (multiply naira by 100)
+  console.info('[Paystack] Initializing transaction', {
+    orderId: request.orderId,
+    orderNumber: request.orderNumber,
+    amount: request.amount,
+    email: request.email,
+  });
+
   const response = await fetch(`${PAYSTACK_API_BASE}/transaction/initialize`, {
     method: 'POST',
     headers: {
@@ -65,7 +71,7 @@ export async function initializePaystackTransaction(
     },
     body: JSON.stringify({
       email: request.email,
-      amount: request.amount, // in kobo (100 = ₦1.00)
+      amount: request.amount,
       metadata: {
         orderNumber: request.orderNumber,
         orderId: request.orderId,
@@ -74,10 +80,23 @@ export async function initializePaystackTransaction(
     }),
   });
 
-  const data = (await response.json()) as PaystackInitializeResponse;
+  const responseText = await response.text();
+  let data: PaystackInitializeResponse;
 
-  if (!data.status || !data.data) {
-    throw new Error(data.message || 'Failed to initialize Paystack transaction');
+  try {
+    data = responseText ? (JSON.parse(responseText) as PaystackInitializeResponse) : { status: false, message: 'Empty Paystack response.' };
+  } catch {
+    console.error('[Paystack] Failed to parse initialize response', { status: response.status, body: responseText.slice(0, 200) });
+    throw new Error('Failed to parse Paystack initialization response.');
+  }
+
+  if (!response.ok || !data.status || !data.data) {
+    console.error('[Paystack] Initialization failed', {
+      status: response.status,
+      statusText: response.statusText,
+      message: data.message,
+    });
+    throw new Error(data.message || 'Failed to initialize Paystack transaction.');
   }
 
   return {
@@ -102,7 +121,7 @@ export async function verifyPaystackTransaction(reference: string): Promise<{
   customerEmail: string;
 }> {
   if (!env.paystackSecretKey) {
-    throw new Error('Paystack secret key not configured');
+    throw new Error('PAYSTACK_SECRET_KEY is not configured on the server.');
   }
 
   const response = await fetch(`${PAYSTACK_API_BASE}/transaction/verify/${encodeURIComponent(reference)}`, {
@@ -112,10 +131,24 @@ export async function verifyPaystackTransaction(reference: string): Promise<{
     },
   });
 
-  const data = (await response.json()) as PaystackVerifyResponse;
+  const responseText = await response.text();
+  let data: PaystackVerifyResponse;
 
-  if (!data.status || !data.data) {
-    throw new Error(data.message || 'Failed to verify Paystack transaction');
+  try {
+    data = responseText ? (JSON.parse(responseText) as PaystackVerifyResponse) : { status: false, message: 'Empty Paystack response.' };
+  } catch {
+    console.error('[Paystack] Failed to parse verification response', { status: response.status, body: responseText.slice(0, 200) });
+    throw new Error('Failed to parse Paystack verification response.');
+  }
+
+  if (!response.ok || !data.status || !data.data) {
+    console.error('[Paystack] Verification failed', {
+      status: response.status,
+      statusText: response.statusText,
+      reference,
+      message: data.message,
+    });
+    throw new Error(data.message || 'Failed to verify Paystack transaction.');
   }
 
   return {

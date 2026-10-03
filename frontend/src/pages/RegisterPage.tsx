@@ -21,6 +21,11 @@ export function RegisterPage() {
     }
   };
 
+  const handleGoogleLogin = () => {
+    const apiBase = import.meta.env.VITE_API_URL ?? '/api';
+    window.location.href = `${apiBase}/auth/google`;
+  };
+
   return (
     <div className="container page-space auth-shell">
       <form className="auth-card" onSubmit={handleSubmit}>
@@ -40,6 +45,9 @@ export function RegisterPage() {
           <input type="password" value={password} onChange={(event) => setPassword(event.target.value)} required />
         </label>
         <button type="submit" className="primary-button full-width">Create account</button>
+        <button type="button" className="secondary-button full-width" onClick={handleGoogleLogin}>
+          Continue with Google
+        </button>
         <p className="auth-link">
           Already a member? <Link to="/login">Sign in</Link>
         </p>

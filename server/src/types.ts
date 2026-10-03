@@ -8,6 +8,8 @@ export interface User {
   role: UserRole;
   phone?: string;
   avatarUrl?: string;
+  authProvider?: 'email' | 'google';
+  googleId?: string;
   createdAt: string;
   updatedAt: string;
 }

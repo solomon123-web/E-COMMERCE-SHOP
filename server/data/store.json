@@ -275,6 +275,130 @@
       "phone": "555010101",
       "createdAt": "2026-10-02T23:20:42.635Z",
       "updatedAt": "2026-10-02T23:20:42.635Z"
+    },
+    {
+      "id": "admin-1",
+      "name": "Lumora Admin",
+      "email": "admin@lumora.com",
+      "passwordHash": "$2b$10$CgByj9RbhzeiMGvPENZcW.92ZaYFJHfYXWgV0mnJJedA0wJuHJmeu",
+      "role": "admin",
+      "phone": "555010101",
+      "createdAt": "2026-10-02T23:38:27.349Z",
+      "updatedAt": "2026-10-02T23:38:27.349Z"
+    },
+    {
+      "id": "admin-1",
+      "name": "Lumora Admin",
+      "email": "admin@lumora.com",
+      "passwordHash": "$2b$10$U7Uy3t3mnxtK8to5PwQt2eUARvkAkAn5vHyBRPaAZZpLZ6lLmi4re",
+      "role": "admin",
+      "phone": "555010101",
+      "createdAt": "2026-10-03T18:35:08.081Z",
+      "updatedAt": "2026-10-03T18:35:08.081Z"
+    },
+    {
+      "id": "user-1791052508337",
+      "name": "Jane Doe",
+      "email": "jane.1791052508106.1556357bdebad@example.com",
+      "passwordHash": "$2b$10$BZX4MMWixBIDibHhwVkq7eC3YM4YxbbVQUacR3x/SItG.T9pvo5g6",
+      "role": "customer",
+      "createdAt": "2026-10-03T18:35:08.337Z",
+      "updatedAt": "2026-10-03T18:35:08.337Z"
+    },
+    {
+      "id": "user-1791052508738",
+      "name": "Jane Doe",
+      "email": "jane.1791052508469.2eb36ff9488dd@example.com",
+      "passwordHash": "$2b$10$VoRyigKiRCX4DCvNCeSqiOZrGGhDNhWUrp1X4J2OquMbZyq0pvCbi",
+      "role": "customer",
+      "createdAt": "2026-10-03T18:35:08.738Z",
+      "updatedAt": "2026-10-03T18:35:08.738Z"
+    },
+    {
+      "id": "admin-1",
+      "name": "Lumora Admin",
+      "email": "admin@lumora.com",
+      "passwordHash": "$2b$10$jllDoK3z1F2Td5y4ptMJqevPPZrH3/aTDxxEg3hIXf2WY2OfisgG.",
+      "role": "admin",
+      "phone": "555010101",
+      "createdAt": "2026-10-03T18:42:24.042Z",
+      "updatedAt": "2026-10-03T18:42:24.042Z"
+    },
+    {
+      "id": "admin-1",
+      "name": "Lumora Admin",
+      "email": "admin@lumora.com",
+      "passwordHash": "$2b$10$PLLV6.GP8Hfk9JMzjCq7GugdsHD8EpdOkFMYDknQ3OVvenSKOI8Mi",
+      "role": "admin",
+      "phone": "555010101",
+      "createdAt": "2026-10-03T19:14:07.977Z",
+      "updatedAt": "2026-10-03T19:14:07.977Z"
+    },
+    {
+      "id": "user-1791054848215",
+      "name": "Jane Doe",
+      "email": "jane.1791054848000.68ebcab3226ff@example.com",
+      "passwordHash": "$2b$10$jrF1nkUSzq9oYwos4xVJK.p1mFUMKbNL2DSzm7POfpYUdFXIP/rlK",
+      "role": "customer",
+      "createdAt": "2026-10-03T19:14:08.215Z",
+      "updatedAt": "2026-10-03T19:14:08.215Z"
+    },
+    {
+      "id": "user-1791054848413",
+      "name": "Jane Doe",
+      "email": "jane.1791054848223.49a1e3a4da678@example.com",
+      "passwordHash": "$2b$10$3Nuk.nl8txzEvTGOzZbEMOI0N.j/9.WGnY6JZdCZuacxQlWVd1rD.",
+      "role": "customer",
+      "createdAt": "2026-10-03T19:14:08.413Z",
+      "updatedAt": "2026-10-03T19:14:08.413Z"
+    },
+    {
+      "id": "admin-1",
+      "name": "Lumora Admin",
+      "email": "admin@lumora.com",
+      "passwordHash": "$2b$10$YWD4nTeVRlsFmj/8hBs59.h8k3rwfqut54vDVWVCYM0tz3uY1tHX.",
+      "role": "admin",
+      "phone": "555010101",
+      "createdAt": "2026-10-03T19:15:04.244Z",
+      "updatedAt": "2026-10-03T19:15:04.244Z"
+    },
+    {
+      "id": "user-1791054904543",
+      "name": "Jane Doe",
+      "email": "jane.1791054904265.cbc59a40a10d4@example.com",
+      "passwordHash": "$2b$10$mtbNVlq8jLMUGsEiNgzvueiUh85/fKZwir/fBLwuhkRy4FFD9.kK2",
+      "role": "customer",
+      "createdAt": "2026-10-03T19:15:04.543Z",
+      "updatedAt": "2026-10-03T19:15:04.543Z"
+    },
+    {
+      "id": "user-1791054904803",
+      "name": "Jane Doe",
+      "email": "jane.1791054904551.030a45153dddf@example.com",
+      "passwordHash": "$2b$10$y42O9NBJ2DnEO6tSZ0DpW.jrTrKVvbv.BMNKid59NPc5Hwo8LBjOq",
+      "role": "customer",
+      "createdAt": "2026-10-03T19:15:04.803Z",
+      "updatedAt": "2026-10-03T19:15:04.803Z"
+    },
+    {
+      "id": "admin-1",
+      "name": "Lumora Admin",
+      "email": "admin@lumora.com",
+      "passwordHash": "$2b$10$nXBxR9NOZEq3tRjP4.cESuqCszSmWhKWhAAkGRe81eA92mf/sDxQe",
+      "role": "admin",
+      "phone": "555010101",
+      "createdAt": "2026-10-03T19:18:21.774Z",
+      "updatedAt": "2026-10-03T19:18:21.774Z"
+    },
+    {
+      "id": "admin-1",
+      "name": "Lumora Admin",
+      "email": "admin@lumora.com",
+      "passwordHash": "$2b$10$LCPg7QZcfQsBCe7UL8/tpOdmxHlRN8j1mliVq/YqxwD63w//VAQq6",
+      "role": "admin",
+      "phone": "555010101",
+      "createdAt": "2026-10-03T19:46:13.829Z",
+      "updatedAt": "2026-10-03T19:46:13.829Z"
     }
   ],
   "carts": {
@@ -300,6 +424,39 @@
         "quantity": 2,
         "createdAt": "2026-10-02T23:12:19.613Z",
         "updatedAt": "2026-10-02T23:12:19.613Z"
+      }
+    ],
+    "user-1791052508337": [],
+    "user-1791052508738": [],
+    "guest-1791052509050-81e8e1d8a41ca": [
+      {
+        "id": "cart-1791052509051",
+        "productId": 1,
+        "quantity": 2,
+        "createdAt": "2026-10-03T18:35:09.051Z",
+        "updatedAt": "2026-10-03T18:35:09.051Z"
+      }
+    ],
+    "user-1791054848215": [],
+    "user-1791054848413": [],
+    "guest-1791054848626-4452ca0208889": [
+      {
+        "id": "cart-1791054848626",
+        "productId": 1,
+        "quantity": 2,
+        "createdAt": "2026-10-03T19:14:08.626Z",
+        "updatedAt": "2026-10-03T19:14:08.626Z"
+      }
+    ],
+    "user-1791054904543": [],
+    "user-1791054904803": [],
+    "guest-1791054905037-99c1f3ed53efd": [
+      {
+        "id": "cart-1791054905038",
+        "productId": 1,
+        "quantity": 2,
+        "createdAt": "2026-10-03T19:15:05.038Z",
+        "updatedAt": "2026-10-03T19:15:05.038Z"
       }
     ]
   },
@@ -435,6 +592,435 @@
       "orderStatus": "pending",
       "createdAt": "2026-10-02T23:13:49.391Z",
       "updatedAt": "2026-10-02T23:13:49.391Z"
+    },
+    {
+      "id": "order-1790984816628",
+      "orderNumber": "LUM-532387",
+      "userId": "user-1790866601444",
+      "email": "solomonchimeremeze22@gmail.com",
+      "phone": "07044950605",
+      "shippingAddress": {
+        "fullName": "Chimeremeze Solomon",
+        "phone": "07044950605",
+        "address": "Block industry, Kurudu, Abuja",
+        "city": "Abuja",
+        "state": "Enugu",
+        "country": "Nigeria",
+        "postalCode": "199190"
+      },
+      "items": [
+        {
+          "productId": 9,
+          "productName": "Pulse Pro",
+          "quantity": 1,
+          "unitPrice": 149,
+          "totalPrice": 149
+        }
+      ],
+      "subtotal": 149,
+      "shippingCost": 14.99,
+      "discount": 0,
+      "total": 163.99,
+      "paymentStatus": "pending",
+      "orderStatus": "pending",
+      "createdAt": "2026-10-02T23:46:56.628Z",
+      "updatedAt": "2026-10-02T23:46:56.628Z"
+    },
+    {
+      "id": "order-1790985237524",
+      "orderNumber": "LUM-356520",
+      "userId": "user-1790866601444",
+      "email": "solomonchimeremeze22@gmail.com",
+      "phone": "07044950605",
+      "shippingAddress": {
+        "fullName": "Chimeremeze Solomon",
+        "phone": "07044950605",
+        "address": "Block industry, Kurudu, Abuja",
+        "city": "Abuja",
+        "state": "Enugu",
+        "country": "Nigeria",
+        "postalCode": "199190"
+      },
+      "items": [
+        {
+          "productId": 9,
+          "productName": "Pulse Pro",
+          "quantity": 1,
+          "unitPrice": 149,
+          "totalPrice": 149
+        }
+      ],
+      "subtotal": 149,
+      "shippingCost": 14.99,
+      "discount": 0,
+      "total": 163.99,
+      "paymentStatus": "pending",
+      "orderStatus": "pending",
+      "createdAt": "2026-10-02T23:53:57.528Z",
+      "updatedAt": "2026-10-02T23:53:57.528Z"
+    },
+    {
+      "id": "order-1791052509053",
+      "orderNumber": "LUM-269096",
+      "userId": null,
+      "email": "jane.1791052509053.1a7ae5a70e94@example.com",
+      "phone": "1234567890",
+      "shippingAddress": {
+        "fullName": "Jane Doe",
+        "phone": "1234567890",
+        "address": "5 Market Street",
+        "city": "Austin",
+        "state": "Texas",
+        "country": "USA",
+        "postalCode": "73301"
+      },
+      "items": [
+        {
+          "productId": 1,
+          "productName": "Aurora Headphones",
+          "quantity": 1,
+          "unitPrice": 199.99,
+          "totalPrice": 199.99
+        }
+      ],
+      "subtotal": 199.99,
+      "shippingCost": 0,
+      "discount": 0,
+      "total": 199.99,
+      "paymentStatus": "pending",
+      "orderStatus": "pending",
+      "createdAt": "2026-10-03T18:35:09.053Z",
+      "updatedAt": "2026-10-03T18:35:09.053Z"
+    },
+    {
+      "id": "order-1791054142600",
+      "orderNumber": "LUM-460674",
+      "userId": "user-1790866601444",
+      "email": "solomonchimeremeze22@gmail.com",
+      "phone": "07044950605",
+      "shippingAddress": {
+        "fullName": "Chimeremeze Solomon",
+        "phone": "07044950605",
+        "address": "Block industry, Kurudu, Abuja",
+        "city": "Abuja",
+        "state": "enugu",
+        "country": "Nigeria",
+        "postalCode": "199190"
+      },
+      "items": [
+        {
+          "productId": 9,
+          "productName": "Pulse Pro",
+          "quantity": 1,
+          "unitPrice": 149,
+          "totalPrice": 149
+        }
+      ],
+      "subtotal": 149,
+      "shippingCost": 14.99,
+      "discount": 0,
+      "total": 163.99,
+      "paymentStatus": "pending",
+      "orderStatus": "pending",
+      "createdAt": "2026-10-03T19:02:22.600Z",
+      "updatedAt": "2026-10-03T19:02:22.600Z"
+    },
+    {
+      "id": "order-1791054183891",
+      "orderNumber": "LUM-138076",
+      "userId": "user-1790866601444",
+      "email": "solomonchimeremeze22@gmail.com",
+      "phone": "07044950605",
+      "shippingAddress": {
+        "fullName": "Chimeremeze Solomon",
+        "phone": "07044950605",
+        "address": "Block industry, Kurudu, Abuja",
+        "city": "Abuja",
+        "state": "enugu",
+        "country": "Nigeria",
+        "postalCode": "199190"
+      },
+      "items": [
+        {
+          "productId": 9,
+          "productName": "Pulse Pro",
+          "quantity": 1,
+          "unitPrice": 149,
+          "totalPrice": 149
+        }
+      ],
+      "subtotal": 149,
+      "shippingCost": 14.99,
+      "discount": 0,
+      "total": 163.99,
+      "paymentStatus": "pending",
+      "orderStatus": "pending",
+      "createdAt": "2026-10-03T19:03:03.891Z",
+      "updatedAt": "2026-10-03T19:03:03.891Z"
+    },
+    {
+      "id": "order-1791054848628",
+      "orderNumber": "LUM-315193",
+      "userId": null,
+      "email": "jane.1791054848627.3e19e0b5034c1@example.com",
+      "phone": "1234567890",
+      "shippingAddress": {
+        "fullName": "Jane Doe",
+        "phone": "1234567890",
+        "address": "5 Market Street",
+        "city": "Austin",
+        "state": "Texas",
+        "country": "USA",
+        "postalCode": "73301"
+      },
+      "items": [
+        {
+          "productId": 1,
+          "productName": "Aurora Headphones",
+          "quantity": 1,
+          "unitPrice": 199.99,
+          "totalPrice": 199.99
+        }
+      ],
+      "subtotal": 199.99,
+      "shippingCost": 0,
+      "discount": 0,
+      "total": 199.99,
+      "paymentStatus": "pending",
+      "orderStatus": "pending",
+      "createdAt": "2026-10-03T19:14:08.628Z",
+      "updatedAt": "2026-10-03T19:14:08.628Z"
+    },
+    {
+      "id": "order-1791054905039",
+      "orderNumber": "LUM-961323",
+      "userId": null,
+      "email": "jane.1791054905039.e71979478eeff@example.com",
+      "phone": "1234567890",
+      "shippingAddress": {
+        "fullName": "Jane Doe",
+        "phone": "1234567890",
+        "address": "5 Market Street",
+        "city": "Austin",
+        "state": "Texas",
+        "country": "USA",
+        "postalCode": "73301"
+      },
+      "items": [
+        {
+          "productId": 1,
+          "productName": "Aurora Headphones",
+          "quantity": 1,
+          "unitPrice": 199.99,
+          "totalPrice": 199.99
+        }
+      ],
+      "subtotal": 199.99,
+      "shippingCost": 0,
+      "discount": 0,
+      "total": 199.99,
+      "paymentStatus": "pending",
+      "orderStatus": "pending",
+      "createdAt": "2026-10-03T19:15:05.039Z",
+      "updatedAt": "2026-10-03T19:15:05.039Z"
+    },
+    {
+      "id": "order-1791055405989",
+      "orderNumber": "LUM-723972",
+      "userId": "user-1790866601444",
+      "email": "solomonchimeremeze22@gmail.com",
+      "phone": "07044950605",
+      "shippingAddress": {
+        "fullName": "Chimeremeze Solomon",
+        "phone": "07044950605",
+        "address": "Block industry, Kurudu, Abuja",
+        "city": "Abuja",
+        "state": "enugu",
+        "country": "Nigeria",
+        "postalCode": "199190"
+      },
+      "items": [
+        {
+          "productId": 1,
+          "productName": "Aurora Headphones",
+          "quantity": 1,
+          "unitPrice": 199.99,
+          "totalPrice": 199.99
+        }
+      ],
+      "subtotal": 199.99,
+      "shippingCost": 0,
+      "discount": 0,
+      "total": 199.99,
+      "paymentStatus": "pending",
+      "orderStatus": "pending",
+      "createdAt": "2026-10-03T19:23:25.989Z",
+      "updatedAt": "2026-10-03T19:23:25.989Z"
+    },
+    {
+      "id": "order-1791057032549",
+      "orderNumber": "LUM-432545",
+      "userId": "user-1790866601444",
+      "email": "solomonchimeremeze22@gmail.com",
+      "phone": "07044950605",
+      "shippingAddress": {
+        "fullName": "Chimeremeze Solomon",
+        "phone": "07044950605",
+        "address": "Block industry, Kurudu, Abuja",
+        "city": "Abuja",
+        "state": "enugu",
+        "country": "Nigeria",
+        "postalCode": "199190"
+      },
+      "items": [
+        {
+          "productId": 1,
+          "productName": "Aurora Headphones",
+          "quantity": 1,
+          "unitPrice": 199.99,
+          "totalPrice": 199.99
+        }
+      ],
+      "subtotal": 199.99,
+      "shippingCost": 0,
+      "discount": 0,
+      "total": 199.99,
+      "paymentStatus": "pending",
+      "orderStatus": "pending",
+      "createdAt": "2026-10-03T19:50:32.549Z",
+      "updatedAt": "2026-10-03T19:50:32.549Z"
+    },
+    {
+      "id": "order-1791057056635",
+      "orderNumber": "LUM-210830",
+      "userId": "user-1790866601444",
+      "email": "solomonchimeremeze22@gmail.com",
+      "phone": "07044950605",
+      "shippingAddress": {
+        "fullName": "Chimeremeze Solomon",
+        "phone": "07044950605",
+        "address": "Block industry, Kurudu, Abuja",
+        "city": "Abuja",
+        "state": "enugu",
+        "country": "Nigeria",
+        "postalCode": "199190"
+      },
+      "items": [
+        {
+          "productId": 1,
+          "productName": "Aurora Headphones",
+          "quantity": 1,
+          "unitPrice": 199.99,
+          "totalPrice": 199.99
+        }
+      ],
+      "subtotal": 199.99,
+      "shippingCost": 0,
+      "discount": 0,
+      "total": 199.99,
+      "paymentStatus": "pending",
+      "orderStatus": "pending",
+      "createdAt": "2026-10-03T19:50:56.635Z",
+      "updatedAt": "2026-10-03T19:50:56.635Z"
+    },
+    {
+      "id": "order-1791057428774",
+      "orderNumber": "LUM-633455",
+      "userId": "user-1790866601444",
+      "email": "solomonchimeremeze22@gmail.com",
+      "phone": "07044950605",
+      "shippingAddress": {
+        "fullName": "Chimeremeze Solomon",
+        "phone": "07044950605",
+        "address": "Block industry, Kurudu, Abuja",
+        "city": "Abuja",
+        "state": "Enugu",
+        "country": "Nigeria",
+        "postalCode": "199190"
+      },
+      "items": [
+        {
+          "productId": 5,
+          "productName": "Oak Desk Lamp",
+          "quantity": 1,
+          "unitPrice": 64.99,
+          "totalPrice": 64.99
+        }
+      ],
+      "subtotal": 64.99,
+      "shippingCost": 14.99,
+      "discount": 0,
+      "total": 79.97999999999999,
+      "paymentStatus": "pending",
+      "orderStatus": "pending",
+      "createdAt": "2026-10-03T19:57:08.774Z",
+      "updatedAt": "2026-10-03T19:57:08.774Z"
+    },
+    {
+      "id": "order-1791057455341",
+      "orderNumber": "LUM-985392",
+      "userId": "user-1790866601444",
+      "email": "solomonchimeremeze22@gmail.com",
+      "phone": "07044950605",
+      "shippingAddress": {
+        "fullName": "Chimeremeze Solomon",
+        "phone": "07044950605",
+        "address": "Block industry, Kurudu, Abuja",
+        "city": "Abuja",
+        "state": "Enugu",
+        "country": "Nigeria",
+        "postalCode": "199190"
+      },
+      "items": [
+        {
+          "productId": 5,
+          "productName": "Oak Desk Lamp",
+          "quantity": 1,
+          "unitPrice": 64.99,
+          "totalPrice": 64.99
+        }
+      ],
+      "subtotal": 64.99,
+      "shippingCost": 14.99,
+      "discount": 0,
+      "total": 79.97999999999999,
+      "paymentStatus": "pending",
+      "orderStatus": "pending",
+      "createdAt": "2026-10-03T19:57:35.341Z",
+      "updatedAt": "2026-10-03T19:57:35.341Z"
+    },
+    {
+      "id": "order-1791057494858",
+      "orderNumber": "LUM-900696",
+      "userId": "user-1790866601444",
+      "email": "solomonchimeremeze22@gmail.com",
+      "phone": "07044950605",
+      "shippingAddress": {
+        "fullName": "Chimeremeze Solomon",
+        "phone": "07044950605",
+        "address": "Block industry, Kurudu, Abuja",
+        "city": "Abuja",
+        "state": "Enugu",
+        "country": "Nigeria",
+        "postalCode": "199190"
+      },
+      "items": [
+        {
+          "productId": 5,
+          "productName": "Oak Desk Lamp",
+          "quantity": 1,
+          "unitPrice": 64.99,
+          "totalPrice": 64.99
+        }
+      ],
+      "subtotal": 64.99,
+      "shippingCost": 14.99,
+      "discount": 0,
+      "total": 79.97999999999999,
+      "paymentStatus": "pending",
+      "orderStatus": "pending",
+      "createdAt": "2026-10-03T19:58:14.858Z",
+      "updatedAt": "2026-10-03T19:58:14.858Z"
     }
   ],
   "payments": [
@@ -447,6 +1033,16 @@
       "status": "pending",
       "createdAt": "2026-10-02T23:21:31.067Z",
       "updatedAt": "2026-10-02T23:21:31.067Z"
+    },
+    {
+      "id": "payment-1791057069078",
+      "orderId": "order-1791057056635",
+      "paystackReference": "T001312743811115",
+      "amount": 19999,
+      "currency": "NGN",
+      "status": "pending",
+      "createdAt": "2026-10-03T19:51:09.078Z",
+      "updatedAt": "2026-10-03T19:51:09.078Z"
     }
   ]
 }

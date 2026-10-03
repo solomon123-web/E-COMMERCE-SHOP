@@ -231,6 +231,49 @@ export function sanitizeUser(user: User) {
   return rest;
 }
 
+export function getUserByEmail(email: string) {
+  const normalizedEmail = email.trim().toLowerCase();
+  return users.find((user) => user.email.toLowerCase() === normalizedEmail) ?? null;
+}
+
+export async function createGoogleUser(input: { name: string; email: string; googleId: string; avatarUrl?: string }) {
+  const normalizedEmail = input.email.trim().toLowerCase();
+  const existingUser = getUserByEmail(normalizedEmail);
+
+  if (existingUser) {
+    const isLinkedAccount = !existingUser.googleId || existingUser.googleId === input.googleId;
+    if (isLinkedAccount) {
+      existingUser.googleId = input.googleId;
+      existingUser.authProvider = existingUser.authProvider ?? 'google';
+      existingUser.avatarUrl = input.avatarUrl ?? existingUser.avatarUrl;
+      existingUser.updatedAt = new Date().toISOString();
+      saveStore();
+      return existingUser;
+    }
+
+    throw new Error('An account with this email already exists. Please sign in with your Lumora password instead.');
+  }
+
+  const passwordHash = await bcrypt.hash(`${input.googleId}-${Date.now()}-lumora-google`, 10);
+  const user: User = {
+    id: `user-${Date.now()}`,
+    name: input.name.trim() || 'Google User',
+    email: normalizedEmail,
+    passwordHash,
+    role: 'customer',
+    avatarUrl: input.avatarUrl,
+    authProvider: 'google',
+    googleId: input.googleId,
+    createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString(),
+  };
+
+  users.push(user);
+  carts[user.id] = [];
+  saveStore();
+  return user;
+}
+
 export function signToken(user: User) {
   return jwt.sign(
     { sub: user.id, email: user.email, role: user.role },

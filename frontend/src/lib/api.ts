@@ -15,14 +15,36 @@ export async function apiFetch<T>(path: string, options: RequestInit = {}): Prom
       headers,
     });
 
-    const body = await response.text();
-    const data = body ? JSON.parse(body) : null;
+    const contentType = response.headers.get('content-type') ?? '';
+    const rawBody = await response.text();
+    let data: any = null;
 
-    if (!response.ok) {
-      throw new Error((data && typeof data.message === 'string' ? data.message : 'Request failed.') || 'Request failed.');
+    if (rawBody && contentType.includes('application/json')) {
+      try {
+        data = JSON.parse(rawBody);
+      } catch {
+        data = null;
+      }
     }
 
-    return data as T;
+    if (!response.ok) {
+      const message = data && typeof data.message === 'string' ? data.message : 'Request failed.';
+      throw new Error(message);
+    }
+
+    if (!rawBody && response.status !== 204) {
+      return null as T;
+    }
+
+    if (!rawBody) {
+      return null as T;
+    }
+
+    if (contentType.includes('application/json')) {
+      return (data ?? null) as T;
+    }
+
+    throw new Error('Unexpected server response. Please check that the backend API is running correctly.');
   } catch (error) {
     if (error instanceof TypeError) {
       throw new Error('Unable to connect to the API server. Please ensure the backend is running on http://localhost:4000.');
