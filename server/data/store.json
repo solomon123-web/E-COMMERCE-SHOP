@@ -409,6 +409,16 @@
       "phone": "555010101",
       "createdAt": "2026-10-03T20:02:15.424Z",
       "updatedAt": "2026-10-03T20:02:15.424Z"
+    },
+    {
+      "id": "admin-1",
+      "name": "Lumora Admin",
+      "email": "admin@lumora.com",
+      "passwordHash": "$2b$10$6Yd36oJLRkTPRV.QVMSvZO7whKJeXOA9Dg.Zw8yCGJGrwjoW84hJy",
+      "role": "admin",
+      "phone": "555010101",
+      "createdAt": "2026-10-03T23:45:14.286Z",
+      "updatedAt": "2026-10-03T23:45:14.286Z"
     }
   ],
   "carts": {
@@ -1130,6 +1140,72 @@
       "orderStatus": "pending",
       "createdAt": "2026-10-03T21:08:46.065Z",
       "updatedAt": "2026-10-03T21:08:46.065Z"
+    },
+    {
+      "id": "order-1791071247708",
+      "orderNumber": "LUM-237955",
+      "userId": "user-1790866601444",
+      "email": "solomonchimeremeze22@gmail.com",
+      "phone": "07044950605",
+      "shippingAddress": {
+        "fullName": "Chimeremeze Solomon",
+        "phone": "07044950605",
+        "address": "Block industry, Kurudu, Abuja",
+        "city": "Abuja",
+        "state": "enugu",
+        "country": "Nigeria",
+        "postalCode": "199105"
+      },
+      "items": [
+        {
+          "productId": 9,
+          "productName": "Pulse Pro",
+          "quantity": 1,
+          "unitPrice": 149,
+          "totalPrice": 149
+        }
+      ],
+      "subtotal": 149,
+      "shippingCost": 14.99,
+      "discount": 0,
+      "total": 163.99,
+      "paymentStatus": "pending",
+      "orderStatus": "pending",
+      "createdAt": "2026-10-03T23:47:27.708Z",
+      "updatedAt": "2026-10-03T23:47:27.708Z"
+    },
+    {
+      "id": "order-1791071263712",
+      "orderNumber": "LUM-404959",
+      "userId": "user-1790866601444",
+      "email": "solomonchimeremeze22@gmail.com",
+      "phone": "07044950605",
+      "shippingAddress": {
+        "fullName": "Chimeremeze Solomon",
+        "phone": "07044950605",
+        "address": "Block industry, Kurudu, Abuja",
+        "city": "Abuja",
+        "state": "enugu",
+        "country": "Nigeria",
+        "postalCode": "199105"
+      },
+      "items": [
+        {
+          "productId": 9,
+          "productName": "Pulse Pro",
+          "quantity": 1,
+          "unitPrice": 149,
+          "totalPrice": 149
+        }
+      ],
+      "subtotal": 149,
+      "shippingCost": 14.99,
+      "discount": 0,
+      "total": 163.99,
+      "paymentStatus": "pending",
+      "orderStatus": "pending",
+      "createdAt": "2026-10-03T23:47:43.712Z",
+      "updatedAt": "2026-10-03T23:47:43.712Z"
     }
   ],
   "payments": [
@@ -1172,6 +1248,16 @@
       "status": "pending",
       "createdAt": "2026-10-03T21:08:49.914Z",
       "updatedAt": "2026-10-03T21:08:49.914Z"
+    },
+    {
+      "id": "payment-1791071267950",
+      "orderId": "order-1791071263712",
+      "paystackReference": "T730410687643433",
+      "amount": 16399,
+      "currency": "NGN",
+      "status": "pending",
+      "createdAt": "2026-10-03T23:47:47.950Z",
+      "updatedAt": "2026-10-03T23:47:47.950Z"
     }
   ]
 }
