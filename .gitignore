@@ -6,6 +6,7 @@ node_modules/
 .env.production
 .env.production.local
 !.env.example
+!frontend/.env.example
 server/.env
 server/.env.*
 !server/.env.example

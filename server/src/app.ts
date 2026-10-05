@@ -124,6 +124,10 @@ function adminOnly(req: Request, res: Response, next: NextFunction) {
   return next();
 }
 
+app.get('/health', (_req, res) => {
+  res.json({ ok: true, status: 'healthy', service: 'lumora-shop' });
+});
+
 app.get('/api/health', (_req, res) => {
   res.json({ ok: true, status: 'healthy', service: 'lumora-shop' });
 });
