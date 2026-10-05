@@ -12,7 +12,7 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['favicon.svg', 'icons.svg', 'apple-touch-icon.png', 'maskable-icon.png'],
+      includeAssets: ['favicon.svg', 'apple-touch-icon.png', 'lumora-icon-192.png', 'lumora-icon-512.png', 'lumora-maskable-512.png'],
       manifest: {
         name: 'Lumora Shop',
         short_name: 'Lumora',
@@ -23,9 +23,9 @@ export default defineConfig({
         theme_color: '#1f4d3a',
         background_color: '#f6f4ef',
         icons: [
-          { src: '/pwa-192.png', sizes: '192x192', type: 'image/png', purpose: 'any' },
-          { src: '/pwa-512.png', sizes: '512x512', type: 'image/png', purpose: 'any' },
-          { src: '/maskable-512.png', sizes: '512x512', type: 'image/png', purpose: 'maskable' },
+          { src: '/lumora-icon-192.png', sizes: '192x192', type: 'image/png', purpose: 'any' },
+          { src: '/lumora-icon-512.png', sizes: '512x512', type: 'image/png', purpose: 'any' },
+          { src: '/lumora-maskable-512.png', sizes: '512x512', type: 'image/png', purpose: 'maskable' },
         ],
       },
       workbox: {

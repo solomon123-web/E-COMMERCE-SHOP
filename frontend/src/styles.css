@@ -95,15 +95,13 @@ img { max-width: 100%; display: block; }
   letter-spacing: -0.05em;
   font-size: 1.45rem;
 }
-.brand-mark {
-  display: inline-flex;
-  width: 32px;
-  height: 32px;
-  align-items: center;
-  justify-content: center;
+.brand-logo {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
   border-radius: 10px;
-  background: var(--primary);
-  color: #fff;
+  display: block;
+  box-shadow: 0 8px 20px rgba(31, 77, 58, 0.12);
 }
 .main-nav {
   display: flex;

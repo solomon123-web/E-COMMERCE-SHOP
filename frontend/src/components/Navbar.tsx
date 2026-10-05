@@ -11,8 +11,8 @@ export function Navbar() {
     <header className="site-header">
       <div className="container nav-shell">
         <Link to="/" className="brand" aria-label="Lumora home">
-          <span className="brand-mark">L</span>
-          Lumora
+          <img src="/lumora-icon-192.png" alt="Lumora" className="brand-logo" />
+          <span>Lumora</span>
         </Link>
 
         <nav className="main-nav" aria-label="Main navigation">
